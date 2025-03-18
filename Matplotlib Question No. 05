@@ -1,0 +1,20 @@
+''' Show a pie chart to represent the percentage distribution of different
+sections in the array sections.
+    sections = ['Section A', 'Section B', 'Section C', 'Section D']
+    sizes = [25, 30, 15, 30] '''
+
+import matplotlib.pyplot as plt
+
+# Given data
+sections = ['Section A', 'Section B', 'Section C', 'Section D']
+sizes = [25, 30, 15, 30]
+
+# Create pie chart
+plt.figure(figsize=(7, 7))
+plt.pie(sizes, labels=sections, autopct='%1.1f%%', colors=['red', 'blue', 'green', 'purple'], startangle=90, shadow=True)
+
+# Title
+plt.title('Percentage Distribution of Sections')
+
+# Show plot
+plt.show()
