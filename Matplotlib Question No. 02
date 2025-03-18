@@ -1,0 +1,22 @@
+''' Generate a line plot to visualize the trend of values for the given data.
+    data = np.array([3, 7, 9, 15, 22, 29, 35]) '''
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Given data
+data = np.array([3, 7, 9, 15, 22, 29, 35])
+
+# Create line plot
+plt.figure(figsize=(8, 5))
+plt.plot(data, marker='o', linestyle='-', color='red', label='Trend Line')
+
+# Labels and title
+plt.xlabel('Index')
+plt.ylabel('Values')
+plt.title('Line Plot of Given Data')
+plt.legend()
+plt.grid(True)
+
+# Show plot
+plt.show()
