@@ -1,0 +1,23 @@
+''' Display a bar chart to represent the frequency of each item in the given
+array categories
+       categories = ['A', 'B', 'C', 'D', 'E']
+       values = [25, 40, 30, 35, 20] '''
+
+import matplotlib.pyplot as plt
+
+# Given data
+categories = ['A', 'B', 'C', 'D', 'E']
+values = [25, 40, 30, 35, 20]
+
+# Create bar chart
+plt.figure(figsize=(8, 5))
+plt.bar(categories, values, color='purple', alpha=0.7)
+
+# Labels and title
+plt.xlabel('Categories')
+plt.ylabel('Frequency')
+plt.title('Bar Chart Representing Frequency of Categories')
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+
+# Show plot
+plt.show()
