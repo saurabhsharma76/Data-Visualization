@@ -1,0 +1,22 @@
+''' Create a histogram to visualize the distribution of values in the array data.
+    data = np.random.normal(0, 1, 1000) '''
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data from a normal distribution
+data = np.random.normal(0, 1, 1000)
+
+# Create histogram
+plt.figure(figsize=(8, 5))
+plt.hist(data, bins=30, color='blue', alpha=0.7, edgecolor='black')
+
+# Labels and title
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.title('Histogram of Normally Distributed Data')
+plt.grid(axis='y', linestyle='--', alpha=0.6)
+
+# Show plot
+plt.show()
+
