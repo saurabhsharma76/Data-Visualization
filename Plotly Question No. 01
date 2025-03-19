@@ -1,4 +1,7 @@
-''' np.random.seed(30)
+'''  Using the given dataset, to generate a 3D scatter plot to visualize the 
+distribution of data points in a threedimensional space.
+
+    np.random.seed(30)
 data = {
     'X': np.random.uniform(-10, 10, 300),
     'Y': np.random.uniform(-10, 10, 300),
