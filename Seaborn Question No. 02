@@ -1,0 +1,25 @@
+''' Generate a dataset of random numbers. Visualize the distribution of a
+ numerical variable. '''
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Generate random dataset
+np.random.seed(42)
+data = pd.DataFrame({
+    'Values': np.random.randn(1000)  # Generating 1000 random numbers from a normal distribution
+})
+
+# Create distribution plot using seaborn
+plt.figure(figsize=(8, 5))
+sns.histplot(data['Values'], bins=30, kde=True, color='blue')
+
+# Labels and title
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.title('Distribution of Numerical Variable')
+
+# Show plot
+plt.show()
