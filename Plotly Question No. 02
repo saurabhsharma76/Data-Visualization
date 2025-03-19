@@ -1,0 +1,36 @@
+'''  Using the Student Grades, create a violin plot to display the distribution of scores across different grade
+categories.
+ np.random.seed(15)
+data = {
+    'Grade': np.random.choice(['A', 'B', 'C', 'D', 'F'], 200),
+    'Score': np.random.randint(50, 100, 200)
+}
+df = pd.DataFrame(data
+ Using the sales data, generate a heatmap to visualize the variation in sales across
+different months and days.
+
+np.random.seed(20)
+data = {
+    'Month': np.random.choice(['Jan', 'Feb', 'Mar', 'Apr', 'May'], 100),
+    'Day': np.random.choice(range(1, 31), 100),
+    'Sales': np.random.randint(1000, 5000, 100)
+}
+df = pd.DataFrame(data) '''
+
+import numpy as np
+import pandas as pd
+import plotly.express as px
+
+# Generate Student Grades dataset
+np.random.seed(15)
+data = {
+    'Grade': np.random.choice(['A', 'B', 'C', 'D', 'F'], 200),
+    'Score': np.random.randint(50, 100, 200)
+}
+df = pd.DataFrame(data)
+
+# Create violin plot
+fig = px.violin(df, x='Grade', y='Score', box=True, points='all', title='Distribution of Scores Across Grades')
+
+# Show plot
+fig.show()
