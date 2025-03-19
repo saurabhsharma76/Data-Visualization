@@ -1,0 +1,37 @@
+''' Generate a synthetic dataset with correlated features. Visualize the
+correlation matrix of a dataset using a heatmap. '''
+
+import numpy as np
+import  matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+
+# Generate synthetic dataset with correlated features
+np.random.seed(42)
+size = 100  # Number of samples
+
+feature1 = np.random.rand(size) * 10
+feature2 = feature1 * 0.8 + np.random.rand(size) * 2  # Correlated with feature1
+feature3 = np.random.rand(size) * 10
+feature4 = feature3 * 0.6 + feature1 * 0.2 + np.random.rand(size) * 2  # Correlated with feature1 and feature3
+
+# Create DataFrame
+data = pd.DataFrame({
+    'Feature 1': feature1,
+    'Feature 2': feature2,
+    'Feature 3': feature3,
+    'Feature 4': feature4
+})
+
+# Compute correlation matrix
+corr_matrix = data.corr()
+
+# Create heatmap
+plt.figure(figsize=(8, 6))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+
+# Title
+plt.title('Correlation Matrix Heatmap')
+
+# Show plot
+plt.show()
