@@ -1,0 +1,26 @@
+'''  Create a scatter plot to visualize the relationship between two variables, 
+by generating a synthetic dataset. '''
+
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+# Generate synthetic dataset
+np.random.seed(42)
+data = pd.DataFrame({
+    'X': np.random.rand(100) * 10,
+    'Y': np.random.rand(100) * 10 + np.random.rand(100) * 5
+})
+
+# Create scatter plot using seaborn
+plt.figure(figsize=(8, 5))
+sns.scatterplot(x='X', y='Y', data=data, color='blue')
+
+# Labels and title
+plt.xlabel('X Values')
+plt.ylabel('Y Values')
+plt.title('Scatter Plot of Synthetic Data')
+
+# Show plot
+plt.show()
