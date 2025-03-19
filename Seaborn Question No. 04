@@ -1,0 +1,26 @@
+''' Generate a dataset with categories and numerical values. Visualize the
+distribution of a numerical variable across different categories. '''
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Generate dataset with categories and numerical values
+np.random.seed(42)
+data = pd.DataFrame({
+    'Category': np.random.choice(['A', 'B', 'C', 'D'], size=200),
+    'Value': np.random.randn(200) * 10 + 50  # Normally distributed values around 50
+})
+
+# Create a violin plot to visualize distribution across categories
+plt.figure(figsize=(8, 5))
+sns.violinplot(x='Category', y='Value', data=data, palette='muted')
+
+# Labels and title
+plt.xlabel('Category')
+plt.ylabel('Value')
+plt.title('Distribution of Numerical Variable Across Categories')
+
+# Show plot
+plt.show()
