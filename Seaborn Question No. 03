@@ -1,0 +1,26 @@
+'''  Create a dataset representing categories and their corresponding values.
+Compare different categories based on numerical values. '''
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Generate dataset with categories and corresponding values
+np.random.seed(42)
+data = pd.DataFrame({
+    'Category': np.random.choice(['A', 'B', 'C', 'D'], size=100),
+    'Value': np.random.randint(10, 100, size=100)
+})
+
+# Create a box plot to compare categories based on numerical values
+plt.figure(figsize=(8, 5))
+sns.boxplot(x='Category', y='Value', data=data, palette='coolwarm')
+
+# Labels and title
+plt.xlabel('Category')
+plt.ylabel('Value')
+plt.title('Comparison of Categories Based on Numerical Values')
+
+# Show plot
+plt.show()
